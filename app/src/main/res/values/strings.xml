@@ -1,3 +1,10 @@
 <resources>
-    <string name="app_name">AndroidMvpIncludingMoxy</string>
+    <string name="app_name">Moxy</string>
+    <string name="title_posts">Posts</string>
+    <string name="title_users">Users</string>
+
+    <string name="user_label_key_name">Name:</string>
+    <string name="user_label_key_email">Email:</string>
+    <string name="user_label_key_phone">Phone:</string>
+    <string name="user_label_key_website">Website:</string>
 </resources>
