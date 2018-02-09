@@ -42,19 +42,19 @@ public class HomeActivity extends MvpAppCompatActivity implements HomeView {
         bottomBar.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
 
-    @Override
-    public void setActiveFragment(int menuId) {
+    private void replaceFragment(Fragment fragment) {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        Fragment selectedFragment = null;
-        switch (menuId) {
-            case R.id.navigation_posts:
-                selectedFragment = new PostsFragment();
-                break;
-            case R.id.navigation_users:
-                selectedFragment = new UsersFragment();
-                break;
-        }
-        transaction.replace(R.id.homeConteiner, selectedFragment);
+        transaction.replace(R.id.homeConteiner, fragment);
         transaction.commit();
+    }
+
+    @Override
+    public void replacePostsFragment() {
+        replaceFragment(new PostsFragment());
+    }
+
+    @Override
+    public void replaceUsersFragment() {
+        replaceFragment(new UsersFragment());
     }
 }

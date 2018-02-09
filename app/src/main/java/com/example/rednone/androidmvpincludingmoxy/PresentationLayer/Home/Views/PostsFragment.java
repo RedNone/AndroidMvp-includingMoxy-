@@ -15,7 +15,6 @@ import android.widget.TextView;
 
 import com.arellomobile.mvp.MvpAppCompatFragment;
 import com.arellomobile.mvp.presenter.InjectPresenter;
-import com.arellomobile.mvp.presenter.PresenterType;
 import com.example.rednone.androidmvpincludingmoxy.DataLayer.Models.PostModel;
 import com.example.rednone.androidmvpincludingmoxy.PresentationLayer.Home.Adapters.PostsAdapter;
 import com.example.rednone.androidmvpincludingmoxy.PresentationLayer.Home.Interfaces.PostsView;
@@ -32,7 +31,7 @@ import butterknife.ButterKnife;
  */
 public class PostsFragment extends MvpAppCompatFragment implements PostsView, SwipeRefreshLayout.OnRefreshListener {
 
-    @InjectPresenter(type = PresenterType.GLOBAL)
+    @InjectPresenter
     PostsPresenter postsPresenter;
 
     @BindView(R.id.postsRecyclerView)

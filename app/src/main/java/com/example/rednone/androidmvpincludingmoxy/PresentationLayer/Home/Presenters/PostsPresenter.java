@@ -30,8 +30,8 @@ public class PostsPresenter extends MvpPresenter<PostsView> {
         ApiManager.getInstance().getPosts(new Callback<List<PostModel>>() {
             @Override
             public void onResponse(Call<List<PostModel>> call, final Response<List<PostModel>> response) {
-                getViewState().showContent();
                 getViewState().setData(response.body());
+                getViewState().showContent();
             }
 
             @Override

@@ -14,10 +14,19 @@ import com.example.rednone.androidmvpincludingmoxy.R;
 public class HomePresenter extends MvpPresenter<HomeView>{
 
     public HomePresenter() {
-        getViewState().setActiveFragment(R.id.navigation_posts);
+        getViewState().replacePostsFragment();
     }
 
     public void itemSelected(final int itemId) {
-        getViewState().setActiveFragment(itemId);
+        switch (itemId) {
+            case R.id.navigation_posts:
+                getViewState().replacePostsFragment();
+                break;
+            case R.id.navigation_users:
+                getViewState().replaceUsersFragment();
+                break;
+            default:
+                break;
+        }
     }
 }
